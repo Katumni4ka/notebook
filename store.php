@@ -12,4 +12,5 @@ $data = [
 //$db->addTask($data);
 $db->store("tasks", $data);
 
-header("Location: /"); exit;
+header("Location: /");
+exit;

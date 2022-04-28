@@ -2,7 +2,7 @@
 <?php
 //CRUD: CREATE, READ, UPDATE, DELETE - для всех сайтов функции
 
-if(!session_status()) {
+if (!session_status()) {
     session_start();
 }
 
@@ -25,10 +25,9 @@ exit;
 $tasks = $db->all("tasks");
 
 // ImageManager - не связывается ни с какой таблицей, отдельная папка с картинками
- // upload($image)
- // delete($path)
+// upload($image)
+// delete($path)
 //  ...
-
 
 
 ?>
@@ -59,13 +58,14 @@ $tasks = $db->all("tasks");
                         <td><?= $task['id']; ?></td>
                         <td><?= $task['title']; ?></td>
                         <td>
-                            <a href="show.php?id=<?= $task['id'];?>" class="btn btn-info">
+                            <a href="show.php?id=<?= $task['id']; ?>" class="btn btn-info">
                                 Show
                             </a>
-                            <a href="edit.php?id=<?= $task['id'];?>" class="btn btn-warning">
+                            <a href="edit.php?id=<?= $task['id']; ?>" class="btn btn-warning">
                                 Edit
                             </a>
-                            <a onclick="return confirm('are you sure?');" href="delete.php?id=<?= $task['id'];?>" class="btn btn-danger">
+                            <a onclick="return confirm('are you sure?');" href="delete.php?id=<?= $task['id']; ?>"
+                               class="btn btn-danger">
                                 Delete
                             </a>
                         </td>

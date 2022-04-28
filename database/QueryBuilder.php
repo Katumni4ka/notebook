@@ -52,8 +52,8 @@ class QueryBuilder
 
     function update($table, $data)
     {
-       $fields = '';
-        foreach($data as $key => $value) {
+        $fields = '';
+        foreach ($data as $key => $value) {
             $fields .= $key . "=:" . $key . ",";
 
         }

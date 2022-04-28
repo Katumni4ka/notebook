@@ -4,10 +4,11 @@ class Auth
 {
     public $db;
 
-    public  function  __construct(QueryBuilder $db)
+    public function __construct(QueryBuilder $db)
     {
         $this->db = $db;
     }
+
     public function register($email, $password)
     {
         $this->db->store('users', [
@@ -15,6 +16,7 @@ class Auth
             'password' => md5($password)
         ]);
     }
+
     public function login($email, $password)
     {
         //Задание - из 1. сделать метод
@@ -22,80 +24,83 @@ class Auth
         $sql = "SELECT * FROM users WHERE email=:email AND password=:password LIMIT 1";
         $statement = $this->db->pdo->prepare($sql);
         $statement->bindParam(":email", $email);
-        $statement->bindParam(":password", md5($password));
+        $passwordHash = md5($password);
+        $statement->bindParam(":password", $passwordHash);
         $statement->execute();
         $user = $statement->fetch(PDO::FETCH_ASSOC);
         // 2. Если да, то записываем в сессию и возвращаем true
-       if($user) {
-           $_SESSION['user'] = $user;
-           return true;
-       }
+        if ($user) {
+            $_SESSION['user'] = $user;
+            return true;
+        }
         // 3. Если нет, возвращаем false
 
-           return false;
+        return false;
     }
 
     public function logout()
-   {
-    unset($_SESSION['user']);
-   }
+    {
+        unset($_SESSION['user']);
+    }
 
-   public function check()
-   {
-       if(isset($_SESSION['user'])) {
-           return true;
-       }
+    public function check()
+    {
+        if (isset($_SESSION['user'])) {
+            return true;
+        }
 
-       return false;
-   }
+        return false;
+    }
 
-   public function currentUser()
-   {
-       if($this->check()) {
-           return $_SESSION['user'];
-       }
-   }
+    public function currentUser()
+    {
+        if ($this->check()) {
+            return $_SESSION['user'];
+        }
 
-   public function fullName()
-   {
-      $user = $this=>$this->currentUser();
-      return $user['name'] . " " . $user['surname'];
-   }
+        return null;
+    }
 
-   public function  getUserStatus()
-   { if($this->isBanned()) {
-       return $user->logout();
+    public function fullName()
+    {
+        $user = $this->currentUser();
+        return $user['name'] . " " . $user['surname'];
+    }
 
+    public function getUserStatus()
+    {
+        if ($this->isBanned()) {
+            return $user->logout();
+        }
 
-   }
+    }
 
-   }
+    public function isBanned()
+    {
 
-   public function isBanned()
-   {
+    }
 
-   }
+    public function isNormal()
+    {
 
-   public function isNormal()
-   {
+    }
 
-   }
+    public function ban()
+    {
 
-   public function ban()
-   {
+    }
 
-   }
+    public function unban()
+    {
+        //TODO make later
+    }
 
-   public function unban()
-   {
+    public function remove()
+    {
 
-   }
-
-   public function remove()
-   {
-
-   }
+    }
 }
+
 ?>
 
 видео 5 - 1 час 22 минуты
