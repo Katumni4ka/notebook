@@ -101,9 +101,7 @@ class Auth
     }
 }
 
-?>
-
-видео 5 - 1 час 22 минуты
+//видео 5 - 1 час 22 минуты
 // ban()
 // unban()
 // getUserStatus - слово выводить "banned", "normal"
