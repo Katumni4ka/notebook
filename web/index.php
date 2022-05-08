@@ -16,6 +16,7 @@ $user = $auth->currentUser();
 $auth->fullName();
 
 $url = $_SERVER['REQUEST_URI'];
+$url = explode('?', $url)[0];
 if ($url === '/list' || $url === '/') {
     require '../index.php';
     exit();
