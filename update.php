@@ -1,8 +1,6 @@
 <?php
+/** @var QueryBuilder $db */
 //Update - изменение или обновление существующей задачи
-require 'database/QueryBuilder.php';
-
-$db = new QueryBuilder;
 
 $data = [
     "id" => $_GET['id'],

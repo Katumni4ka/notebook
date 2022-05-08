@@ -1,12 +1,8 @@
 <?php
+/** @var QueryBuilder $db */
 //Show - вывод одной задачи
 
-require 'database/QueryBuilder.php';
-
-$db = new QueryBuilder;
-
 $id = $_GET['id'];
-//$task = $db-> getTask($id);
 $task = $db->getOne("tasks", $id);
 ?>
 

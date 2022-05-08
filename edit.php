@@ -1,9 +1,6 @@
 <?php
+/** @var QueryBuilder $db */
 //Edit - вывод одной конкретной задачи, показывает форму (совокупность create+show)
-
-require 'database/QueryBuilder.php';
-
-$db = new QueryBuilder;
 
 $id = $_GET['id'];
 //$task = $db->getTask($id);
@@ -20,7 +17,7 @@ $task = $db->getOne("tasks", $id);
     <div class="row">
         <div class="col-md-12">
             <h1>Edit Task</h1>
-            <form action="update.php?id=<?= $task['id']; ?>" method="post">
+            <form action="/update?id=<?= $task['id']; ?>" method="post">
                 <div class="form-group">
                     <input type="text" name="title" class="form-control" value="<?= $task['title']; ?>"
                 </div>
