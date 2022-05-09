@@ -23,7 +23,7 @@ $tasks = $db->all("tasks");
     <div class="row">
         <div class="col-md-12">
             <h1>All tasks</h1>
-            <a href="/create" class="btn btn-success">Add Task</a>
+            <a href="/tasks/create" class="btn btn-success">Add Task</a>
             <table class="table">
                 <thead>
                 <tr>
@@ -39,13 +39,13 @@ $tasks = $db->all("tasks");
                         <td><?= $task['id']; ?></td>
                         <td><?= $task['title']; ?></td>
                         <td>
-                            <a href="/show?id=<?= $task['id']; ?>" class="btn btn-info">
+                            <a href="/tasks/show?id=<?= $task['id']; ?>" class="btn btn-info">
                                 Show
                             </a>
-                            <a href="/edit?id=<?= $task['id']; ?>" class="btn btn-warning">
+                            <a href="/tasks/edit?id=<?= $task['id']; ?>" class="btn btn-warning">
                                 Edit
                             </a>
-                            <a onclick="return confirm('are you sure?');" href="/delete?id=<?= $task['id']; ?>"
+                            <a onclick="return confirm('are you sure?');" href="/tasks/delete?id=<?= $task['id']; ?>"
                                class="btn btn-danger">
                                 Delete
                             </a>

@@ -17,7 +17,7 @@ $task = $db->getOne("tasks", $id);
     <div class="row">
         <div class="col-md-12">
             <h1>Edit Task</h1>
-            <form action="/update?id=<?= $task['id']; ?>" method="post">
+            <form action="/tasks/update?id=<?= $task['id']; ?>" method="post">
                 <div class="form-group">
                     <input type="text" name="title" class="form-control" value="<?= $task['title']; ?>"
                 </div>

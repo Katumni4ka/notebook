@@ -17,26 +17,29 @@ $auth->fullName();
 
 $url = $_SERVER['REQUEST_URI'];
 $url = explode('?', $url)[0];
-if ($url === '/list' || $url === '/') {
-    require '../index.php';
+if ($url === '/') {
+    require '../homepage.php';
     exit();
-} elseif ($url === '/create') {
-    require '../create.php';
+} elseif ($url === '/tasks/list' || $url === '/tasks/') {
+    require '../tasks/index.php';
     exit();
-} elseif ($url === '/delete') {
-    require '../delete.php';
+} elseif ($url === '/tasks/create') {
+    require '../tasks/create.php';
     exit();
-} elseif ($url === '/edit') {
-    require '../edit.php';
+} elseif ($url === '/tasks/delete') {
+    require '../tasks/delete.php';
     exit();
-} elseif ($url === '/show') {
-    require '../show.php';
+} elseif ($url === '/tasks/edit') {
+    require '../tasks/edit.php';
     exit();
-} elseif ($url === '/store') {
-    require '../store.php';
+} elseif ($url === '/tasks/show') {
+    require '../tasks/show.php';
     exit();
-} elseif ($url === '/update') {
-    require '../update.php';
+} elseif ($url === '/tasks/store') {
+    require '../tasks/store.php';
+    exit();
+} elseif ($url === '/tasks/update') {
+    require '../tasks/update.php';
     exit();
 }
 echo "404 | ERROR";

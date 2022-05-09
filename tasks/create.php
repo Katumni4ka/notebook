@@ -11,7 +11,7 @@
     <div class="row">
         <div class="col-md-12">
             <h1>Create Task</h1>
-            <form action="/store" method="POST">
+            <form action="/tasks/store" method="POST">
                 <div class="form-group">
                     <input type="text" class="form-control" name="title">
                 </div>
