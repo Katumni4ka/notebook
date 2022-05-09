@@ -41,5 +41,27 @@ if ($url === '/') {
 } elseif ($url === '/tasks/update') {
     require '../tasks/update.php';
     exit();
+} elseif ($url === '/users/list' || $url === '/users/') {
+    require '../users/index.php';
+    exit();
+} elseif ($url === '/users/create') {
+    require '../users/create.php';
+    exit();
+} elseif ($url === '/users/delete') {
+    require '../users/delete.php';
+    exit();
+} elseif ($url === '/users/edit') {
+    require '../users/edit.php';
+    exit();
+} elseif ($url === '/users/show') {
+    require '../users/show.php';
+    exit();
+} elseif ($url === '/users/store') {
+    require '../users/store.php';
+    exit();
+} elseif ($url === '/users/update') {
+    require '../users/update.php';
+    exit();
 }
+
 echo "404 | ERROR";
